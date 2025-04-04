@@ -11,6 +11,21 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@playwright/test": "^1.51.1"
-  }
+    "@playwright/test": "^1.51.1",
+    "playwright": "^1.51.1"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "playwright-core": "^1.51.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shindetejas31/JulesAI_Playwright-Automation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shindetejas31/JulesAI_Playwright-Automation/issues"
+  },
+  "homepage": "https://github.com/shindetejas31/JulesAI_Playwright-Automation#readme"
 }
