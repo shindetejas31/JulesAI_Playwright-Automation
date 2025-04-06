@@ -1,7 +1,60 @@
-{
-    "validCredentials": {
-      "email": "qa@julesai.com",
-      "password": "QaJULES2023!"
-    }
+[
+  {
+    "scenario": "Login with valid credentials",
+    "email": "qa@julesai.com",
+    "password": "QaJULES2023!",
+    "expectedSuccess": true
+  },
+  {
+    "scenario": "Login with invalid email and valid password",
+    "email": "invalid@example.com",
+    "password": "QaJULES2023!",
+    "invalidEmailAndValidPassword": true
+  },
+  {
+    "scenario": "Login with valid email and invalid password",
+    "email": "qa@julesai.com",
+    "password": "WrongPassword123!",
+    "validEmailAndInvalidPassword": true
+  },
+  {
+    "scenario": "Login with invalid email and invalid password",
+    "email": "wrong@example.com",
+    "password": "WrongPassword123!",
+    "invalidEmailAndInvalidPassword": true
+  },
+  {
+    "scenario": "Login with empty email and password",
+    "email": "",
+    "password": "",
+    "requiredField": true
+  },
+  {
+    "scenario": "Login with only email",
+    "email": "qa@julesai.com",
+    "password": "",
+    "requiredPassword": true
+  },
+  {
+    "scenario": "Login with only password",
+    "email": "",
+    "password": "QaJULES2023!",
+    "requiredEmail": true
+  },
+  {
+    "scenario": "Login with invalid email (missing .com)",
+    "email": "qa@julesai",
+    "password": "QaJULES2023!",
+    "invalidEmailFormatAlertOnly": true
+  },
+  {
+    "scenario": "Login with invalid email (missing @)",
+    "email": "invalid-email-format",
+    "password": "QaJULES2023!",
+    "invalidEmailFormatAlertAndTooltip": true
+  },
+  {
+    "scenario": "Check password field is masked",
+    "checkPasswordMasking": true
   }
-  
+]
