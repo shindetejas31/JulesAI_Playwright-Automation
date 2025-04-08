@@ -1,0 +1,23 @@
+[
+    {
+      "associatedCompany": "TestData-1",
+      "siteName": "TestData-1",
+      "address1": "A1",
+      "address2": "1st Lane",
+      "country": "India",
+      "state": "Goa",
+      "city": "Punjim",
+      "zipCode": "1234567"
+    },
+    {
+      "associatedCompany": "TestData-2",
+      "siteName": "TestData-2",
+      "address1": "B2",
+      "address2": "2nd Avenue",
+      "country": "Peru",
+      "state": "Apurimac",
+      "city": "Lima",
+      "zipCode": "9876543"
+    }
+  ]
+  

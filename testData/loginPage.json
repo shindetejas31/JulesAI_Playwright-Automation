@@ -2,13 +2,13 @@
   {
     "scenario": "Login with valid credentials",
     "email": "qa@julesai.com",
-    "password": "QaJULES2023!",
+    "password": "Jay@2132001",
     "expectedSuccess": true
   },
   {
     "scenario": "Login with invalid email and valid password",
     "email": "invalid@example.com",
-    "password": "QaJULES2023!",
+    "password": "Jay@2132001",
     "invalidEmailAndValidPassword": true
   },
   {
@@ -38,19 +38,19 @@
   {
     "scenario": "Login with only password",
     "email": "",
-    "password": "QaJULES2023!",
+    "password": "Jay@2132001",
     "requiredEmail": true
   },
   {
     "scenario": "Login with invalid email (missing .com)",
     "email": "qa@julesai",
-    "password": "QaJULES2023!",
+    "password": "Jay@2132001",
     "invalidEmailFormatAlertOnly": true
   },
   {
     "scenario": "Login with invalid email (missing @)",
     "email": "invalid-email-format",
-    "password": "QaJULES2023!",
+    "password": "Jay@2132001",
     "invalidEmailFormatAlertAndTooltip": true
   },
   {

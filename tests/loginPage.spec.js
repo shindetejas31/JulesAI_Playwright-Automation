@@ -1,7 +1,8 @@
 const { test, expect } = require('@playwright/test');
 const loginTestData = require('../testData/loginPage.json');
 const { LoginPage } = require('../pageObjects/loginPage');
-const { HomePage } = require('../pageObjects/homePage');
+const { HomePage } = require('../pageObjects/homePage/homePage');
+const { CommonMethods } = require('../pageObjects/commonMethods');
 
 /**
  * @description
@@ -11,10 +12,12 @@ const { HomePage } = require('../pageObjects/homePage');
 test.describe('Login Functionality - Data Driven (Multiple Scenarios)', () => {
     let loginPage;
     let homePage;
+    let commonMethods;
 
     test.beforeEach(async ({ page }) => {
         loginPage = new LoginPage(page);
         homePage = new HomePage(page);
+        commonMethods = new CommonMethods(page);
         await loginPage.baseURL();
     });
 
@@ -32,6 +35,8 @@ test.describe('Login Functionality - Data Driven (Multiple Scenarios)', () => {
             if (data.expectedSuccess) {
                 await homePage.validateHomePageLabel();
                 await expect(page).toHaveURL(/.*purchases/i);
+                await homePage.clickOnProfileIcon();
+                await homePage.clickLogoutButton();
 
                 /**
                  * Scenario 2: Invalid email format missing '.com'.
@@ -77,7 +82,7 @@ test.describe('Login Functionality - Data Driven (Multiple Scenarios)', () => {
                  * Expectation: Incorrect email or password alert should be shown.
                  */
             } else if (data.invalidEmailAndValidPassword || data.validEmailAndInvalidPassword || data.invalidEmailAndInvalidPassword) {
-                await loginPage.validateIncorrectEmailOrPasswordAlert();
+                await commonMethods.validateToastAlertOrMessage('Your email and/or password are incorrects');
             }
 
             /**
