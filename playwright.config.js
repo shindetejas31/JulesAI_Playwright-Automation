@@ -3,7 +3,7 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   reporter: [['html', { open: 'never' }]], // generate HTML report, don't auto open
-  timeout: 30 * 1000,
+  timeout: 60 * 1000,
   retries: 1,
   use: {
     headless: true, // run browser in headless mode

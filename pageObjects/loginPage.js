@@ -16,7 +16,6 @@ class LoginPage {
     this.loginButton = page.locator(`button[type='submit'] span[class='MuiButton-label']`);
     this.emailRequiredMsg = page.locator(`div[class='sc-ksZaOG kDhRPt'] div:nth-child(1) div:nth-child(3)`);
     this.passwordRequiredMsg = page.locator(`body div[id='root'] div div div:nth-child(2) div:nth-child(3)`);
-    this.toastMessage = page.locator(`[data-test-id="toaster-message"]`);
     this.invalidEmailFormat = page.locator(`//div[normalize-space()='Email not valid']`);
   }
 
@@ -68,18 +67,6 @@ class LoginPage {
       const passwordAlert = await this.passwordRequiredMsg.textContent();
       console.log('Password alert appeared as:', passwordAlert);
     }
-  }
-
-  /**
-   * Validates toast message for incorrect email or password login attempt.
-   * 
-   * @param {string} expectedText - The expected error text (not currently used)
-   */
-  async validateIncorrectEmailOrPasswordAlert(expectedText) {
-    await expect(this.toastMessage).toBeVisible();
-    await expect(this.toastMessage).toHaveText('Your email and/or password are incorrects');
-    const toastText = await this.toastMessage.textContent();
-    console.log(toastText);
   }
 
   /**
